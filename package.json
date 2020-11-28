@@ -1,0 +1,41 @@
+{
+  "name": "magnitium-backend",
+  "version": "1.1.1",
+  "description": "Backend for magnitium twitch extension",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastianbila/magnitium-backend.git"
+  },
+  "keywords": [
+    "js",
+    "twitch",
+    "express",
+    "node",
+    "socket-io",
+    "extensions",
+    "backend"
+  ],
+  "author": "Sebastian Bila <sebastianbila.sw@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastianbila/magnitium-backend/issues"
+  },
+  "homepage": "https://github.com/sebastianbila/magnitium-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "hltv": "^2.21.1",
+    "http": "0.0.1-security",
+    "socket.io": "^3.0.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
+  }
+}
