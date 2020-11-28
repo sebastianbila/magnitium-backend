@@ -1,3 +1,4 @@
 module.exports = {
-  HltvRouter: require('./hltvRouter')
+  HltvRouter: require('./hltvRouter'),
+  MatchesRouter: require('./matchesRouter'),
 }

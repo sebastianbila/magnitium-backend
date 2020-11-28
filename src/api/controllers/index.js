@@ -1,3 +1,4 @@
 module.exports = {
-  HltvController: require('./htlvController')
+  HltvController: require('./htlvController'),
+  MatchesController: require('./matchesController')
 }
