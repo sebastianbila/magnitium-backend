@@ -14,8 +14,8 @@ async function getAll(req, res, next) {
 async function getSpecificMatch(req, res, next) {
   try {
     const id = req.params.id
-    const data = await HLTV.getMatch({
-      id: `${id}`
+    const data = await models.matches.findById({
+      _id: `${id}`
     })
     res.status(200).json(data)
   } catch (err) {
@@ -118,6 +118,7 @@ async function getAllMatches(req, res, next) {
 }
 
 
+
 module.exports = {
   getAll,
   getSpecificMatch,
@@ -126,5 +127,5 @@ module.exports = {
   addMaps,
   getAllTeams,
   getAllMaps,
-  getAllMatches
+  getAllMatches,
 }
