@@ -10,15 +10,6 @@ async function getAll(req, res, next) {
   }
 }
 
-async function getAllInput(req, res, next) {
-  try {
-    const fromDb = await models.matches.find({ _id: '5fc2a114ad5e56320c0e02fb' })
-    console.log(fromDb.player)
-    res.status(200).json(fromDb)
-  } catch (err) {
-    next(err)
-  }
-}
 
 async function getSpecificMatch(req, res, next) {
   try {
@@ -99,11 +90,41 @@ async function addMaps(req, res, next) {
   }
 }
 
+async function getAllMaps(req, res, next) {
+  try {
+    const data = await models.maps.find({})
+    res.status(200).json(data)
+  } catch (err) {
+    next(err)
+  }
+}
+
+async function getAllTeams(req, res, next) {
+  try {
+    const data = await models.teams.find({})
+    res.status(200).json(data)
+  } catch (err) {
+    next(err)
+  }
+}
+
+async function getAllMatches(req, res, next) {
+  try {
+    const data = await models.matches.find({})
+    res.status(200).json(data)
+  } catch (err) {
+    next(err)
+  }
+}
+
+
 module.exports = {
   getAll,
   getSpecificMatch,
   addMatch,
-  getAllInput,
   addTeams,
-  addMaps
+  addMaps,
+  getAllTeams,
+  getAllMaps,
+  getAllMatches
 }
