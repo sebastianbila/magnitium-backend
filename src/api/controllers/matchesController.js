@@ -11,17 +11,8 @@ async function getAll(req, res, next) {
 }
 
 
-async function getSpecificMatch(req, res, next) {
-  try {
-    const id = req.params.id
-    const data = await models.matches.findById({
-      _id: `${id}`
-    })
-    res.status(200).json(data)
-  } catch (err) {
-    next(err)
-  }
-}
+
+
 
 async function addTeams(req, res, next) {
   try {
@@ -121,11 +112,10 @@ async function getAllMatches(req, res, next) {
 
 module.exports = {
   getAll,
-  getSpecificMatch,
   addMatch,
   addTeams,
   addMaps,
   getAllTeams,
   getAllMaps,
-  getAllMatches,
+  getAllMatches
 }
