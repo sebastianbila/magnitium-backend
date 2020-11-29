@@ -2,7 +2,7 @@ const router = require('express').Router()
 const { HltvController } = require('../controllers')
 
 router.get('/getMatch/:id', HltvController.getMatch)
-router.get('/getMatches/:id', HltvController.getMatches)
+router.get('/getMatches', HltvController.getMatches)
 router.get('/getMatcheStats', HltvController.getMatcheStats)
 router.get('/getMatchStats/:id', HltvController.getMatcheStats)
 router.get('/getMatchMapStats/:id', HltvController.getMatchMapStats)
