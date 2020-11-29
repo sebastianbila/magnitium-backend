@@ -78,8 +78,22 @@ async function addMaps(req, res, next) {
   try {
     const filedata = req.file
     if (!filedata) throw new Error('File must be included')
-
+    const addMap = new models.maps({
+      mapName: req.body.mapName,
+      imgPath: filedata ? filedata.path : ''
+    })
     // filedata
+    await addMap
+      .save(addMap)
+      .then(data => {
+        res.send(data)
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || 'Some error occurred while creating the db.'
+        })
+      })
   } catch (err) {
     next(err)
   }

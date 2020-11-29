@@ -9,6 +9,6 @@ router.get('/matches/:id', MatchesController.getSpecificMatch)
 router.get('/getAllInput', MatchesController.getAllInput)
 router.post('/addMatch', MatchesController.addMatch)
 router.post('/addTeams', MatchesController.addTeams)
-router.post('/upload', MatchesController.addMaps)
+router.post('/upload', storageMiddleware, MatchesController.addMaps)
 
 module.exports = router
